@@ -56,6 +56,8 @@ public class SpellingTree {
 
     public void printWords(String subWord, SpellingNode c){//This is such a sloppy way to implement this
         for(SpellingNode i: c.getChildren()){
+            if(i==null)
+                return;
             if(i.getCorrect())
                 System.out.println(subWord+i.value);
             printWords(subWord+i.value, i);
@@ -69,6 +71,7 @@ public class SpellingTree {
 
         public SpellingTreeIterator(){
             current = root;
+            trace = new Stack<>();
         }
 
         /**

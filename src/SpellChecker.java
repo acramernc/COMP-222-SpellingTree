@@ -5,11 +5,11 @@ import java.io.File;
 public class SpellChecker {
     private static SpellingTree myTree;
 
-    public static void main(String[] args){
+    public static void main(String[] args) throws FileNotFoundException{
         myTree = new SpellingTree();
-        readWords();//TODO create input file
+        readWords("dictionary.txt");
         myTree.printWords("", myTree.root);
-        System.out.println(checkWords());//TODO create check file
+        System.out.println(checkWords("test.txt"));
     }
 
     public static int checkWords(String fileName) throws FileNotFoundException {
