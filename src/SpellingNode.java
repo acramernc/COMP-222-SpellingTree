@@ -1,3 +1,5 @@
+import java.util.NoSuchElementException;
+
 /**
  * @author Adam Cramer
  * Represents a single node in the SpellingTree
@@ -25,6 +27,21 @@ public class SpellingNode {
                 return false;
         }
 
+        children[childrenIndex] = new SpellingNode(val);
+        childrenIndex++;
+        return true;
+    }
+
+    /**
+     * Returns SpellingNode associated with val
+     */
+    public SpellingNode getChildAt(char val){
+        for(int i = 0; i<childrenIndex; i++){//Check current children for a child that matches val
+            if(children[i].value == val)
+                return children[i];
+        }
+
+        throw new NoSuchElementException("Node does not have a child with val = " + val);
 
     }
 
