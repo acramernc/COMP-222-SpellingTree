@@ -54,6 +54,10 @@ public class SpellingTree {
         return iter.current.getCorrect();
     }
 
+    public void printWords(String subWord, SpellingNode c){
+        //TODO: write this
+    }
+
     private class SpellingTreeIterator{
         SpellingNode current;
         private Stack<SpellingNode> trace;
