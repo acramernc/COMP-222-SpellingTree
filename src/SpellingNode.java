@@ -45,6 +45,17 @@ public class SpellingNode {
 
     }
 
+    /**
+     * @return an array containing all the children of the node without any blank indexes
+     */
+    public SpellingNode[] getChildren(){
+        SpellingNode[] output = new SpellingNode[childrenIndex+1];
+        for(int i = 0; i<childrenIndex; i++){
+            output[i] = children[childrenIndex];
+        }
+        return output;
+    }
+
     public boolean getCorrect() {
         return correctWord;
     }

@@ -54,8 +54,13 @@ public class SpellingTree {
         return iter.current.getCorrect();
     }
 
-    public void printWords(String subWord, SpellingNode c){
-        //TODO: write this
+    public void printWords(String subWord, SpellingNode c){//This is such a sloppy way to implement this
+        for(SpellingNode i: c.getChildren()){
+            if(i.getCorrect())
+                System.out.println(subWord+i.value);
+            printWords(subWord+i.value, i);
+        }
+        return;
     }
 
     private class SpellingTreeIterator{
